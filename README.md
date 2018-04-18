@@ -29,7 +29,7 @@ Prerequisites
 - MySQL client
 - Git
 
-
+--
 
     $ sudo apt-get install python-setuptools python-virtualenv python-dev build-essential
     $ sudo apt-get install libmysqlclient-dev 
