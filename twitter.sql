@@ -32,7 +32,6 @@ CREATE TABLE IF NOT EXISTS `tweet` (
   `text` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` date NOT NULL,
   `favorite_count` int(11) DEFAULT NULL,
-  `sensitive` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `lan` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

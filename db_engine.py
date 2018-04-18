@@ -8,4 +8,4 @@ class Engines(object):
     codecs.register(lambda name: codecs.lookup('utf8') if name == 'utf8mb4' else None)
 
     def db_twitter(self):
-        return sqlalchemy.create_engine('mysql://username:password@127.0.0.1/db_name?charset=utf8mb4')
+        return sqlalchemy.create_engine('mysql://admin:admin@127.0.0.1/test_tweeter?charset=utf8mb4')

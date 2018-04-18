@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s: %(mes
 try:
     user = sys.argv[1]
 except:
-    logging.error('Please specify a user id >>> ./bin/python insert_twuser.py <userid>')
+    logging.error('Please specify a user id >>> ./bin/python insert_twuser.py <screen_name>')
     
 def insert_tw_user(user=user):
 
@@ -51,11 +51,11 @@ def insert_tw_user(user=user):
         db.execute(sql_insert_user)
         db.close()
 
-        logging.info('Got it! The ' + screen_name + ' account is now stored in database')
+        logging.info('Got it! ' + screen_name + ' is now stored in database')
 
     except exc.SQLAlchemyError as e:
         if 'Duplicate entry' in str(e):
-            logging.warning('An account named ' + screen_name + ' is already in database')
+            logging.warning('An account ' + screen_name + ' is already in database')
         else:
             raise
 

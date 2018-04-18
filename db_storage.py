@@ -82,6 +82,9 @@ def db_storage(ff=ff):
     sql_ff = "SELECT id FROM user_ff"
     ff_users = db.execute(sql_ff).fetchall()
     ff_users = [int(x[0]) for x in ff_users]
+
+    if len(tw_users + ff_users) == 0:
+        logging.error('No users in database. Please insert at least one user >>> ./bin/python insert_twuser.py <screen_name>')
     
 
     # authorize twitter, initialize tweepy
@@ -90,7 +93,7 @@ def db_storage(ff=ff):
     api = tweepy.API(auth)
 
 
-    # get list of follower and followees by golden standard user id
+    # get list of users and users' followers and followees (if option "ff" is True)
     for tw in tw_users:
         try:
             
@@ -106,11 +109,11 @@ def db_storage(ff=ff):
                 followers = user.followers(count=200).ids()
                 followees = user.friends(count=200).ids()
     
-                # Add followers and followees list
+                # ddd followers and followees in users list
                 users.extend(followers)
                 users.extend(followees) 
 
-            # make lusers ist unique
+            # make users list unique
             users = list(set(users))
 
             for user in users:
@@ -163,7 +166,6 @@ def db_storage(ff=ff):
     
                 # add tweet in database
                 # ---------------------------------------------------------------
-
                 user_id = user
         
                 # select last inserted tweet in DB
