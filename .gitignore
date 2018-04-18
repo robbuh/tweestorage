@@ -1,0 +1,10 @@
+*.pyc
+.DS_Store
+*.log
+!logs
+bin
+include
+lib
+local
+share
+pip-selfcheck.json
