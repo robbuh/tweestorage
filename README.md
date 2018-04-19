@@ -26,12 +26,14 @@ Prerequisites
 
 - Python 2.7
 - Python Virtualenv
+- MySQL Server
 - MySQL client
 - Git
 
---
+_
 
     $ sudo apt-get install python-setuptools python-virtualenv python-dev build-essential
+    $ sudo apt-get install mysql-server
     $ sudo apt-get install libmysqlclient-dev 
     $ sudo apt-get install git
 
