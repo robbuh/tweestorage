@@ -4,10 +4,6 @@ Tweet storage
 An example code to store tweet and retweet in MySQL database.  Users are stored in database. 
 It is also possible to store users' followers and followees (max 200 accounts per user).
 
-Premise
---------
-This is an example code. Store a big ammount of data in a relational database may not be the right choice. Please consider to use other storage system if you need to store a very large number of tweet, users, followers and followees.
-
 
 Contents
 -------------
